@@ -1,67 +1,100 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 :root {
-  --page-bgcolor: hsl(212, 45%, 89%);
-  --card-bgcolor: hsl(0, 0%, 100%);
-  --card-title-color: hsl(218, 44%, 22%);
-  --card-content-color: hsl(216, 15%, 48%);
-  --attribution-link: hsl(228, 45%, 44%);
+  --slate-900: #1f314f;
+  --slate-500: #68778d;
+  --slate-300: #d5e1ef;
+  --white: white;
+
+  --text-preset-1-size: 22px;
+  --text-preset-1-weight: bold;
+  --text-preset-1-line-height: 1.2;
+  --text-preset-1-letter-spacing: 0;
+
+  --text-preset-2-size: 15px;
+  --text-preset-2-weight: normal;
+  --text-preset-2-line-height: 1.4;
+  --text-preset-2-letter-spacing: 0.2px;
+
+  --spacing-4: 40px;
+  --spacing-3: 24px;
+  --spacing-2: 16px;
+  --spacing-1: 8px;
+
+  --card-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.0477);
+  --card-max-width: 320px;
+  --card-border-radius: 20px;
+  --qr-code-border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  background-color: var(--page-bgcolor);
-  height: max-content;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  font-family: Outfit, sans-serif;
-  font-size: 15px;
+  padding: var(--spacing-2);
+  gap: var(--spacing-3);
+
+  background-color: var(--slate-300);
+  color: var(--slate-500);
+
+  font-family: "Outfit", sans-serif;
+  font-size: var(--text-preset-2-size);
+  font-weight: var(--text-preset-2-weight);
+  line-height: var(--text-preset-2-line-height);
+  letter-spacing: var(--text-preset-2-letter-spacing);
   text-align: center;
 }
 
 .card {
-  box-sizing: border-box;
-  background-color: var(--card-bgcolor);
-  max-width: 320px;
-  min-width: 200px;
-  padding: 16px;
-  border-radius: 16px;
-  box-shadow: 0px 20px 45px -9px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  margin-bottom: 0;
+  background-color: var(--white);
+  max-width: var(--card-max-width);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-2);
+  padding-bottom: var(--spacing-4);
+  gap: var(--spacing-3);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
 }
 
-.qrcode_img {
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--spacing-2);
+  gap: var(--spacing-2);
+}
+
+.qrcode-img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: var(--qr-code-border-radius);
 }
 
-.card_title {
-  color: var(--card-title-color);
-  font-weight: 700;
-  font-size: 22px;
-  margin: 20px 16px;
-  margin-bottom: 0;
-}
-
-.card_content {
-  color: var(--card-content-color);
-  font-weight: 400;
-  margin: 20px 16px;
+.card-title {
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  line-height: var(--text-preset-1-line-height);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  color: var(--slate-900);
 }
 
 .attribution {
-  margin: 10px;
-  margin-top: 0;
-  color: var(--card-title-color);
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-1);
 
-.attribution a {
-  color: var(--attribution-link);
+  a {
+    color: var(--slate-900);
+  }
 }
